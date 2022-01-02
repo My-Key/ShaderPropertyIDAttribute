@@ -1,5 +1,8 @@
 # ShaderPropertyIDAttribute
-Attributes for Odin Inspector for drawing dropdown with shader properties from Shader, Material and Renderer
+Attributes for Odin Inspector for drawing string as dropdown with shader properties from Shader, Material and Renderer
+
+## Note
+Property must be stored as string, because int id from `Shader.PropertyToID` is not constant between plays
 
 # Usage
 
