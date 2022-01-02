@@ -44,7 +44,7 @@ public class Container
 	[SerializeField, RendererPropertyID] private string m_id2; 
 }
 
-// Overrider renderer and type
+// Override renderer and type
 [SerializeField, RendererPropertyIDRendererOverride, RendererPropertyIDTypeOverride(ShaderPropertyIDAttributeBase.Type.Texture)]
 private Container m_container; 
 ```
