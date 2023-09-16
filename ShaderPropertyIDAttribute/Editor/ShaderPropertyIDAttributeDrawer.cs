@@ -82,6 +82,9 @@ public abstract class ShaderPropertyIDAttributeDrawerBase<TAttribute, TResolver>
 	{
 		foreach (var child in currentProperty.ParentValueProperty.Children)
 		{
+			if (child.ValueEntry == null)
+				continue;
+
 			var value = child.ValueEntry.TypeOfValue;
 
 			if (!value.InheritsFrom(type)) continue;
