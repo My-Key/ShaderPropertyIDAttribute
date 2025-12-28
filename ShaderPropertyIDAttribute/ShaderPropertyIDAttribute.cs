@@ -1,4 +1,23 @@
 ﻿using System;
+using UnityEngine;
+
+#if UNITY_EDITOR
+using Sirenix.OdinInspector.Editor;
+
+[assembly: OdinVisualDesignerAttributeItem("Shader Property", typeof(MaterialPropertyIDAttribute))]
+[assembly: OdinVisualDesignerAttributeItem("Shader Property", typeof(ShaderPropertyIDAttribute))]
+[assembly: OdinVisualDesignerAttributeItem("Shader Property", typeof(RendererPropertyIDAttribute))]
+
+[assembly: OdinVisualDesignerAttributeItem("Shader Property", typeof(MaterialsPropertyIDTypeOverrideAttribute))]
+[assembly: OdinVisualDesignerAttributeItem("Shader Property", typeof(ShaderPropertyIDTypeOverrideAttribute))]
+[assembly: OdinVisualDesignerAttributeItem("Shader Property", typeof(RendererPropertyIDTypeOverrideAttribute))]
+
+[assembly: OdinVisualDesignerAttributeItem("Shader Property", typeof(MaterialPropertyIDMaterialOverrideAttribute))]
+[assembly: OdinVisualDesignerAttributeItem("Shader Property", typeof(ShaderPropertyIDShaderOverrideAttribute))]
+[assembly: OdinVisualDesignerAttributeItem("Shader Property", typeof(RendererPropertyIDRendererOverrideAttribute))]
+
+[assembly: OdinVisualDesignerAttributeItem("Shader Property", typeof(RendererPropertyIDParentListAttribute))]
+#endif
 
 public abstract class ShaderPropertyIDAttributeBase : Attribute
 {
@@ -12,6 +31,8 @@ public abstract class ShaderPropertyIDAttributeBase : Attribute
 	}
 
 	public Type m_type;
+	
+	[Tooltip("If left empty reference will be found automatically from sibling fields and properties")]
 	public string m_reference;
 	
 	public ShaderPropertyIDAttributeBase(string reference, Type type)
